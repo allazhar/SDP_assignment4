@@ -20,6 +20,7 @@ public class GameSessionFacade {
 
     public void startQuickGame(String name, String token, String gameMode) {
         System.out.println("=== INITIALIZING GAME SESSION VIA FACADE ===");
+        System.out.println();
 
         boolean isAuthenticate = auth.authenticatePlayer(name, token);
         if (!isAuthenticate) {
@@ -31,6 +32,7 @@ public class GameSessionFacade {
         String serverIp = serverAllocator.allocateServer(lobbyID);
         preloader.loadMapAssets(serverIp);
 
+        System.out.println();
         System.out.println("=== GAME SUCCESSFULLY STARTED ON " + serverIp + " ===");
     }
 }
